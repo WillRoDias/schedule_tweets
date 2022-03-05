@@ -4,14 +4,14 @@ class RegistrationsController < ApplicationController
     end
 
     def create
-        render plain: "Hi!"
+        # render plain: "Hi!"
         # render plain: params[:user]
-        # @user = User.new(user_params)
-        # if @user.save
-        #     redirect_to root_path, notice: "Successfullu created account"
-        # else
-        #     render :new
-        # end
+         @user = User.new(user_params)
+         if @user.save
+             redirect_to root_path, notice: "Successfullu created account"
+         else
+             render json: @user.errors
+         end
     end
 
     private
