@@ -8,6 +8,8 @@ class RegistrationsController < ApplicationController
          if @user.save
             session[:user_id] = @user.id
             # Session informa aos cookies do navegador os dados do usuário que acabou de se cadastrar.
+            # Session = cookie encriptado
+            # Cookies = informações legíveis por qualquer ums
             redirect_to root_path, notice: "Successfullu created account"
          else
             render :new
