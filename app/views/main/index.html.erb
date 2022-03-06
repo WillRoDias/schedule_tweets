@@ -8,5 +8,6 @@
 </div>
 
 <% if @user %>
+    <%# Se houver algum dado de cookie armazenado na variável no controller, mostrar aqui. %>
     Logged in as: <%= @user.email%>
 <% end %>
