@@ -5,6 +5,7 @@ class MainController < ApplicationController
         # flash.now[:alert] = "Invalid email or password"
         
         if session[:user_id]
+            # Se houver algum dado de usuário armazenado nos cookies do navegador, armazena os dados numa variável para o front utilizar.
             @user = User.find(session[:user_id])
         end
     end    
