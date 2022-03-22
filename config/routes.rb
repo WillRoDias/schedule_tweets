@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   root to: "main#index" # Aponta para o controller "main" e "root" indica que é a página principal
   # Defines the root path route ("/")
   # root "articles#index"
+  
+  get "password", to: "passwords#edit"
+  patch "password", to: "passwords#update"
+
   get "sign_up", to: "registrations#new"
   post "sign_up", to: "registrations#create"
 
